@@ -10,13 +10,13 @@ namespace NT1B_Console
             Console.WriteLine("¡¡¡Hola Curso!!!");
 
             #region Constructor por defecto
-            Persona per1 = new Persona();
-            
+            Persona per1 = new Persona();            
+
             MostrarEstadoInterno(per1);
 
-            per1.Id = 1;
+            per1.PersonaId = 1;
             per1.SetNombre("Mariano");
-            per1.Apellido = "Longo";
+            per1.Apellido = "Longo";            
 
             MostrarEstadoInterno(per1);
 
@@ -39,8 +39,9 @@ namespace NT1B_Console
             direcPM.Calle = "Caverna oscura";
             direcPM.Numero = 666;
             direcPM.CodigoPostal = 2323;
+            direcPM.NombreDelEncargado = "Pedro";
 
-            Persona per3 = new Persona(3, "Pablo", "Marmol",direcPM);
+            Persona per3 = new Persona(3333333, "Pablo", "Marmol",direcPM);
             
             MostrarEstadoInterno(per3);
 
@@ -50,10 +51,10 @@ namespace NT1B_Console
 
         private static void MostrarEstadoInterno(Persona persona)
         {
-            ImprimirEncabezado("Mostrando estado interno de la persona " + persona.Id);
-            ImprimirLinea("Id = " + persona.Id);
+            ImprimirEncabezado("Mostrando estado interno de la persona " + persona.PersonaId);
+            ImprimirLinea("Id = " + persona.PersonaId);
             ImprimirLinea("Nombre = " + persona.GetNombre());
-            ImprimirLinea("Apellido = " + persona.Apellido);
+            ImprimirLinea("Apellido = " + persona.Apellido);            
             //ImprimirLinea("Direccion = " + persona.Direccion);
 
             //Para poder acceder a los atributos de dirección y que no se presente una excepción, se debe disponer del objeto ya instanciado.
@@ -62,7 +63,7 @@ namespace NT1B_Console
                 //A Modo de ejemplo, en este caso, mejoro el comportamiento, y en lugar de mostrar atributo por atributo de la persona
                 //Delego en Dirección, que me pase el estado Interno como un string, de la forma que lo quiero mostrar.
                 //De esta forma, evito tener que conocer en el programa como está conformado el objeto.
-                ImprimirLinea(persona.Direccion.GetEstadoInternoEnLineas());                
+                ImprimirLinea(persona.Direccion.GetEstadoInternoEnLineas());                  
             }
             else
             {
@@ -77,17 +78,17 @@ namespace NT1B_Console
                 msg = "Mostrando encabezado por defecto";
             }
 
-            ImprimirLinea(GenerarBarra(msg.Length));            
+            ImprimirLinea(GenerarBarra(msg.Length,"#"));            
             ImprimirLinea(msg);
-            ImprimirLinea(GenerarBarra(msg.Length));
+            ImprimirLinea(GenerarBarra(msg.Length,"-"));
         }
 
-        private static string GenerarBarra(int largo)
+        private static string GenerarBarra(int largo,string caracter)
         {
             string barra = String.Empty;
             for(int i = 0; i < largo; i++)
             {
-                barra += "#";
+                barra += caracter;
             }
             return barra;
         }
