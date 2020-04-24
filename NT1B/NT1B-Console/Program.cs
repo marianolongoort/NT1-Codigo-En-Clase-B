@@ -10,7 +10,7 @@ namespace NT1B_Console
             Console.WriteLine("¡¡¡Hola Curso!!!");
 
             #region Constructor por defecto
-            Persona per1 = new Persona();            
+            Persona per1 = new Persona();
 
             MostrarEstadoInterno(per1);
 
@@ -42,7 +42,11 @@ namespace NT1B_Console
             direcPM.NombreDelEncargado = "Pedro";
 
             Persona per3 = new Persona(3333333, "Pablo", "Marmol",direcPM);
+
+            per3.Direccion.Numero = 777;
             
+            direcPM.Numero = 888;
+
             MostrarEstadoInterno(per3);
 
             #endregion

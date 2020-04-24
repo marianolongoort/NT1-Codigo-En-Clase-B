@@ -9,7 +9,7 @@ using NT1B_wAuthentication.Models;
 namespace NT1B_wAuthentication.Controllers
 {
     public class HomeController : Controller
-    {
+    {    
         public IActionResult Index()
         {
             return View();

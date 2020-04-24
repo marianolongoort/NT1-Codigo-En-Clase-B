@@ -52,7 +52,7 @@ namespace NT1B_Console.Models
         public Direccion Direccion { get; set; }
 
         //Uno a Muchos
-        public ICollection<Telefono> Telefonos { get; set; }
+        public ICollection<Telefono> Telefonos { get; set; } = new List<Telefono>();
 
         //Muchos a Muchos, generamos una nueva Entidad para la relación
         public ICollection<PersonaDireccion> Direcciones { get; set; }
