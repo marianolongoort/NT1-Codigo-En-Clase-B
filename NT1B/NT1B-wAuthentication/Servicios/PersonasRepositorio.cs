@@ -15,14 +15,14 @@ namespace NT1B_wAuthentication.Servicios
             {
                 Nombre = "Mariano",
                 Apellido = "Longo",
-                Edad = 42
+                Edad = 60
             });
 
             personas.Add(new Persona()
             {
                 Nombre = "Pablo",
                 Apellido = "Marmol",
-                Edad = 999
+                Edad = 50
             }
             );
 
@@ -30,7 +30,7 @@ namespace NT1B_wAuthentication.Servicios
             {
                 Nombre = "Pedro",
                 Apellido = "Picapiedra",
-                Edad = 1200
+                Edad = 50
             });
 
             return personas;
@@ -42,7 +42,7 @@ namespace NT1B_wAuthentication.Servicios
             {
                 Nombre = "Mariano",
                 Apellido = "Longo",
-                Edad = 42
+                Edad = 42                
             };
         }
     }

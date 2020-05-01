@@ -1,0 +1,23 @@
+﻿@model IEnumerable<int>
+@{
+    ViewData["Title"] = "TestPasajeDatos";
+}
+
+<h1>TestPasajeDatos</h1>
+
+@ViewBag.LoqueQuieras
+@ViewBag.UnInt
+
+@foreach(Persona per in ViewBag.LasPersonas)
+{
+    <p>@per.Apellido @per.Edad</p>
+    
+}
+
+
+
+
+@foreach (var n in @Model)
+{
+    <p>@n</p>
+}

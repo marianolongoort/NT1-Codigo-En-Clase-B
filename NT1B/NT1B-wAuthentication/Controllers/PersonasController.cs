@@ -14,9 +14,9 @@ namespace NT1B_wAuthentication.Controllers
         {
             List<Persona> personas = PersonasRepositorio.GetPersonas();
 
+            
 
             return View(personas);
-
             //Ejemplos de Return
             //return Json(personas);
             //return Json(PersonasRepositorio.GetPersonaEjemplo());
@@ -26,6 +26,24 @@ namespace NT1B_wAuthentication.Controllers
             //return RedirectToRoute("MiRuta");
             //return RedirectToAction("AddPersona");
         }
+
+        public IActionResult TestPasajeDatos()
+        {
+            List<int> numeros = new List<int>() { 1,3,2,5,-3,9,-8,10};
+            
+            var numerosMayores = numeros.Where(num => num > 0).OrderByDescending(x => x);
+
+            List<Persona> personas = PersonasRepositorio.GetPersonas();
+
+            var personasLinq = personas.Where(p => p.Edad > 40).OrderBy(a => a.Edad).ThenByDescending(a => a.Apellido);
+
+            ViewBag.LasPersonas = personasLinq;
+            ViewBag.LoqueQuieras = "Te paso un String";
+            ViewBag.UnInt = 4;
+
+            return View(numerosMayores);
+        }
+
 
 
         [HttpGet]

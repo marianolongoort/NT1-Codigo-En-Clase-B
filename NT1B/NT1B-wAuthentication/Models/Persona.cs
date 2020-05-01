@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace NT1B_wAuthentication.Models
 {
@@ -11,6 +12,7 @@ namespace NT1B_wAuthentication.Models
 
         public bool Casado { get; set; } = true;
 
+        public Direccion Direccion { get; set; }
 
         public int Edad
         {
