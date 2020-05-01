@@ -57,7 +57,7 @@ namespace NT1B_wAuthentication
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Personas}/{action=Index}/{id?}");
             });
         }
     }

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<NT1B_wAuthentication.Models.Persona>
+
+@{
+    ViewData["Title"] = "Listado de Personas";    
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Edad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Casado)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Persona per in Model)
+        {
+            //Agrego la fila con sus celdas.
+
+            var miClase = "";
+            if(per.Apellido == "Longo")
+            {
+                miClase = "miTdCss";
+            }
+                        
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => per.Nombre)
+            </td>
+            <td class="@miClase">
+                @Html.DisplayFor(modelItem => per.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => per.Edad)
+            </td>
+            <td>
+                @*@per.Casado*@
+                @Html.DisplayFor(modelItem => per.Casado)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-controller="Personas" asp-action="AddPersona">Agregar Persona</a>

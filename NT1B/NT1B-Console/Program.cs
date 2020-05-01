@@ -1,5 +1,7 @@
 ﻿using NT1B_Console.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace NT1B_Console
 {
