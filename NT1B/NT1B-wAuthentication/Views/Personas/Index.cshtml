@@ -10,6 +10,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.PersonaId)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Nombre)
             </th>
             <th>
@@ -35,6 +38,9 @@
             }
                         
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => per.PersonaId)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => per.Nombre)
             </td>

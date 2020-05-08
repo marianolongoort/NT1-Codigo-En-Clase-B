@@ -5,8 +5,14 @@ namespace NT1B_wAuthentication.Models
 {
     public class Persona
     {
+        public int PersonaId { get; set; }
+
         public string Nombre { get; set; }
+
+        [MaxLength(50)]
         public string Apellido { get; set; }
+
+        public int DNI { get; set; }
 
         private int edad;
 

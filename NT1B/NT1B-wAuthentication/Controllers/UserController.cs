@@ -4,13 +4,24 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NT1B_wAuthentication.Models;
+using NT1B_wAuthentication.Servicios;
 
 namespace NT1B_wAuthentication.Controllers
 {
     public class UserController : Controller
     {
+        private readonly IRepositorio _repositorio;
+
+        public UserController(IRepositorio repositorio)
+        {
+            _repositorio = repositorio;
+        }
+
         public IActionResult Index()
-        {            
+        {
+            _repositorio.GetPersonas();
+            _repositorio.GetDirecciones();
+
             return View();
         }
 

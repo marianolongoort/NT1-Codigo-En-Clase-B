@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace NT1B_wAuthentication.Servicios
 {
-    public static class PersonasRepositorio
+    public class RepositorioEnMemoria : IRepositorio
     {
-        public static List<Persona> GetPersonas()
+        public List<Persona> GetPersonas()
         {
             List<Persona> personas = new List<Persona>();
             personas.Add(new Persona()
@@ -36,14 +36,24 @@ namespace NT1B_wAuthentication.Servicios
             return personas;
         }
 
-        public static Persona GetPersonaEjemplo()
+        public Persona GetPersonaEjemplo()
         {
             return new Persona()
             {
                 Nombre = "Mariano",
                 Apellido = "Longo",
-                Edad = 42                
+                Edad = 42
             };
+        }
+
+        public List<Direccion> GetDirecciones()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<string> GetTelefonos()
+        {
+            throw new NotImplementedException();
         }
     }
 }
